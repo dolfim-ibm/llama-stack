@@ -123,6 +123,15 @@ def tool_chat_page():
                 },
             )
             toolgroup_selection[i] = tool_dict
+        elif tool_name == "mcp::docling-llamastack":
+            tool_dict = dict(
+                name="mcp::docling-llamastack",
+                args={
+                    "vector_db_id": list(selected_vector_dbs)[0],
+                },
+            )
+            toolgroup_selection[i] = tool_dict
+
 
     @st.cache_resource
     def create_agent():
